@@ -42,9 +42,9 @@ Currently looking for Network Engineer, IT Support, Junior Developer, or Hardwar
 
 ### Featured projects
 
-- **[Network Design & Simulation Labs](#)**: multi-router LAN/WAN topologies in Cisco Packet Tracer, with IP
+- **[Network Design & Simulation Labs] : multi-router LAN/WAN topologies in Cisco Packet Tracer, with IP
   addressing, subnetting, routing via the Cisco IOS CLI, and layer-by-layer fault diagnosis.
-- **[QuranVerse Transcription](#)**: graduation project at the University of Jordan. Built the web front end and
+- **[QuranVerse Transcription] : graduation project at the University of Jordan. Built the web front end and
   integrated it with a partner's backend, with correct Arabic text rendering.
 - **[Dota 2 SkinChanger, community website](https://dota2-arcanavault.pages.dev/)**: bilingual (Arabic RTL) landing
   page, deployed on Cloudflare Pages.
