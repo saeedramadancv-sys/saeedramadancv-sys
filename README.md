@@ -65,6 +65,15 @@ B.Sc. in Computer Engineering from the **University of Jordan**. I build web app
 
 ---
 
+### 💼 Experience
+
+**Full-Stack Web Development Trainee** — _Tuned Applications_ · Amman, Jordan · Sep 2025 – Jan 2026
+- Built and tested full-stack web applications using **ASP.NET Core (MVC), C#, SQL Server, and Entity Framework**.
+- Developed responsive, cross-browser UIs with **HTML, CSS, Bootstrap, and JavaScript**; validated REST API endpoints with **Postman**.
+- Applied authentication, authorization, and secure data-handling practices; delivered weekly progress reports and technical documentation.
+
+---
+
 ### 🚀 Featured Projects
 
 **🕌 [QuranVerse — Transcription &amp; Verification](https://github.com/saeedramadancv-sys/quranverse)** · _Graduation Project, University of Jordan_
