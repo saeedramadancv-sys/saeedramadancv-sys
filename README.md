@@ -1,4 +1,4 @@
-### Hi, I'm Saeed Ramadan. Computer engineer, full-stack development and networking.
+### Hi, I'm Saeed Ramadan. Computer engineer, full-stack web development and networking.
 
 B.Sc. Computer Engineering, University of Jordan. I build web apps with ASP.NET Core, and I also design and
 troubleshoot Cisco router and switch topologies, checking one layer at a time instead of guessing where the fault is.
