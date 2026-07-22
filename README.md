@@ -80,6 +80,10 @@ B.Sc. in Computer Engineering from the **University of Jordan**. I build web app
 Front-end (HTML / CSS / JavaScript) web app that transcribes and verifies Quranic verses with accurate right-to-left Arabic rendering, a word-level verification algorithm, and REST API integration. Deployed via GitHub Pages (CI/CD) and packaged for Android with Capacitor.
 &nbsp;&nbsp;🔗 [Live Demo](https://saeedramadancv-sys.github.io/quranverse/) · 💻 [Source Code](https://github.com/saeedramadancv-sys/quranverse)
 
+**🔗 [ShortLink — URL Shortener with Analytics](https://github.com/saeedramadancv-sys/url-shortener)** · _ASP.NET Core, EF Core, SQL Server_
+A full-stack URL shortener that tracks every click, with a per-link analytics dashboard (14-day chart, top referrers). Containerized with Docker and deployed live on Render.
+&nbsp;&nbsp;🔗 [Live Demo](https://url-shortener-cc59.onrender.com/) · 💻 [Source Code](https://github.com/saeedramadancv-sys/url-shortener)
+
 **🌐 Network Design &amp; Simulation Labs** · _Cisco Packet Tracer_
 Multi-router LAN/WAN topologies — IP addressing, subnetting, and routing via the Cisco IOS CLI, with structured, layer-by-layer fault diagnosis.
 
