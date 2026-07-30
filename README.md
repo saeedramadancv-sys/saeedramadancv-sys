@@ -76,10 +76,6 @@ B.Sc. in Computer Engineering from the **University of Jordan**. I build web app
 
 ### 🚀 Featured Projects
 
-**📡 [NetWatch — Real-Time Network Monitoring](https://github.com/saeedramadancv-sys/netwatch)** · _ASP.NET Core 9, Angular 19, SignalR, Docker_
-Full-stack monitoring system that probes devices over ICMP / TCP / HTTP on a background scheduler, debounces failures through a state machine, and auto-opens/resolves incidents — streamed live to a bilingual (Arabic RTL / English) Angular dashboard over SignalR. Clean Architecture, JWT auth with rotating refresh tokens, 133 automated tests, and a 4-job CI pipeline.
-&nbsp;&nbsp;🔗 [Live Demo](https://netwatch-rbmr.onrender.com/) · 💻 [Source Code](https://github.com/saeedramadancv-sys/netwatch)
-
 **🕌 [QuranVerse — Transcription &amp; Verification](https://github.com/saeedramadancv-sys/quranverse)** · _Graduation Project, University of Jordan_
 Front-end (HTML / CSS / JavaScript) web app that transcribes and verifies Quranic verses with accurate right-to-left Arabic rendering, a word-level verification algorithm, and REST API integration. Deployed via GitHub Pages (CI/CD) and packaged for Android with Capacitor.
 &nbsp;&nbsp;🔗 [Live Demo](https://saeedramadancv-sys.github.io/quranverse/) · 💻 [Source Code](https://github.com/saeedramadancv-sys/quranverse)
