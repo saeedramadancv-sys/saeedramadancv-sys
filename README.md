@@ -19,7 +19,6 @@ B.Sc. in Computer Engineering from the **University of Jordan**. I build web app
 
 - 📍 Based in **Amman, Jordan**
 - 🎯 Open to: **Network Engineer · IT Support · Junior Developer · Hardware** roles
-- 🎓 **CCNA 200-301** — in progress (2026)
 - 🗣️ Arabic (native) · English (professional working proficiency)
 
 ---
