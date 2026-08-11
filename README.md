@@ -13,13 +13,16 @@
 
 ---
 
-### 👋 About me
+### Hi, I'm Saeed Ramadan 👋
 
-B.Sc. in Computer Engineering from the **University of Jordan**. I build and **ship** full-stack web apps with **C#, ASP.NET Core (MVC), and Entity Framework Core** — two of my projects are publicly deployed and running live, not just coursework. I like owning a feature end to end, from the database schema to the browser. My engineering background also gives me solid networking fundamentals (Cisco IOS, Wireshark) when a role calls for them.
+**Junior .NET / Full-Stack Developer** — Computer Engineering graduate (University of Jordan, 2026).
+I build and **ship** full-stack web apps with C#, ASP.NET Core and Entity Framework Core.
 
-- 📍 Based in **Amman, Jordan** — open to **on-site & remote**
-- 🎯 Open to: **Junior .NET Developer · Full-Stack Developer · Software Engineer**
-- 🗣️ Arabic (native) · English (professional working proficiency)
+- 🔭 Two live, deployed projects (not just coursework)
+- 🌐 Focus: ASP.NET Core MVC · EF Core · SQL Server · REST APIs · Docker
+- 🧠 Also: JavaScript, Arabic/RTL front-ends, networking (Cisco IOS, Wireshark)
+- 📍 Amman, Jordan — open to Junior Developer roles (on-site & remote)
+- 📫 saeed.ramadan.cv@gmail.com · [LinkedIn](https://www.linkedin.com/in/saeed-ramadan-cv/)
 
 ---
 
@@ -76,9 +79,6 @@ A full-stack URL shortener that tracks every click, with a per-link analytics da
 **🕌 [QuranVerse — Transcription &amp; Verification Engine](https://github.com/saeedramadancv-sys/quranverse)** · _Graduation Project, University of Jordan_
 A web app that transcribes and verifies Arabic text with a word-level **Levenshtein alignment algorithm** (dynamic programming), a full Arabic/RTL normalization pipeline (diacritics, tatweel, alef/ya/ta-marbuta), and a resilient REST layer with graceful local fallback. Deployed via GitHub Pages and packaged for Android with Capacitor.
 &nbsp;&nbsp;🔗 [Live Demo](https://saeedramadancv-sys.github.io/quranverse/) · 💻 [Source Code](https://github.com/saeedramadancv-sys/quranverse)
-
-**🌐 Network Design &amp; Simulation Labs** · _Cisco Packet Tracer_
-Multi-router LAN/WAN topologies — IP addressing, subnetting, and routing via the Cisco IOS CLI, with structured, layer-by-layer fault diagnosis.
 
 ---
 
