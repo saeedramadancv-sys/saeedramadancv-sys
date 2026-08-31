@@ -26,7 +26,7 @@ doesn't show in a demo — validating input at the boundary, protecting every wr
 and putting a unique index behind the code that assumes uniqueness.
 
 **Looking for:** a Junior .NET / Backend Developer role where I can learn from an
-experienced team and own real features. Based in Amman, open to relocation across the GCC.
+experienced team and own real features. **In Kuwait for in-person interviews from early October 2026**; open across the GCC.
 
 ---
 
