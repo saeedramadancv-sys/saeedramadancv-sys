@@ -16,12 +16,12 @@
 
 ---
 
-I build **.NET web applications and ship them** — both projects below are running on live
+I build **.NET web applications and ship them** — the projects below are running on live
 public URLs right now, not sitting in a folder.
 
 I graduated in Computer Engineering from the University of Jordan in January 2026 and
-went deep on the Microsoft stack: C#, ASP.NET Core MVC, Entity Framework Core and
-SQL Server, with Docker and CI/CD around them. What I care about is the part that
+went deep on the Microsoft stack: C#, ASP.NET Core (Web API & MVC), Entity Framework Core
+and SQL Server, with Angular, Docker and CI/CD around them. What I care about is the part that
 doesn't show in a demo — validating input at the boundary, protecting every write path,
 and putting a unique index behind the code that assumes uniqueness.
 
