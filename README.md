@@ -1,7 +1,7 @@
 <h1 align="center">Saeed Adel Ramadan</h1>
 
 <p align="center">
-  <b>Junior .NET Developer</b> — ASP.NET Core · C# · SQL Server · Entity Framework Core
+  <b>.NET Backend Developer</b> — ASP.NET Core · C# · SQL Server · Entity Framework Core
 </p>
 
 <p align="center">
@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="mailto:saeed.ramadan.cv@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
-  <a href="https://linkedin.com/in/saeed-ramadan-cv"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="https://www.linkedin.com/in/saeedramadan-dotnet"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
   <img src="https://img.shields.io/badge/Open_to_work-2ea44f?style=flat-square" alt="Open to work"/>
 </p>
 
@@ -25,7 +25,7 @@ and SQL Server, with Angular, Docker and CI/CD around them. What I care about is
 doesn't show in a demo — validating input at the boundary, protecting every write path,
 and putting a unique index behind the code that assumes uniqueness.
 
-**Looking for:** a Junior .NET / Backend Developer role where I can learn from an
+**Looking for:** a .NET / Backend Developer role where I can learn from an
 experienced team and own real features. **In Kuwait for in-person interviews from early October 2026**; open across the GCC.
 
 ---
@@ -33,7 +33,7 @@ experienced team and own real features. **In Kuwait for in-person interviews fro
 ## 🚀 Live projects
 
 ### 📡 [NetWatch](https://github.com/saeedramadancv-sys/netwatch) — network &amp; service availability monitoring
-[**▶ Try it live**](https://netwatch-rbmr.onrender.com) · ASP.NET Core 9 Web API · EF Core 9 · Identity + JWT · SignalR · Angular 19 · xUnit
+[**▶ Try it live**](https://netwatch-rbmr.onrender.com) · ASP.NET Core 9 Web API · EF Core 9 · Identity + JWT · SignalR · Redis · Angular 19 · xUnit
 
 My most complete project — built the way a production monitoring tool is built, with
 every non-obvious decision documented in the code.
@@ -48,6 +48,13 @@ every non-obvious decision documented in the code.
   one dropped packet never raises a false incident.
 - **Provider-agnostic data** — EF Core 9 with separate SQLite / SQL Server migration
   assemblies; live updates pushed to the dashboard over SignalR; bilingual EN / AR (RTL).
+- **Event-driven caching** — the dashboard summary is cached in Redis and retired the
+  moment a probe changes state, not left to a TTL: a monitoring wall showing "all up"
+  thirty seconds into an outage is worse than no wall at all. Cache failures cost
+  latency, never availability.
+- **Infrastructure as code** — a Bicep template provisioning App Service, Azure Cache for
+  Redis and Azure SQL, with an OIDC-authenticated deployment workflow, plus Serilog
+  structured logging throughout.
 
 ### 🔗 [ShortLink](https://github.com/saeedramadancv-sys/url-shortener) — URL shortener with click analytics
 [**▶ Try it live**](https://url-shortener-cc59.onrender.com) · ASP.NET Core MVC (.NET 9) · EF Core 9 · SQL Server / SQLite · Docker
@@ -101,11 +108,15 @@ entire client application, ~2,200 lines of dependency-free ES6 across 8 modules.
 ![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
 ![T-SQL](https://img.shields.io/badge/T--SQL-CC2927?style=flat-square)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
 
 **DevOps &amp; Tools**
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
+![Bicep](https://img.shields.io/badge/Bicep-0078D4?style=flat-square)
+![Serilog](https://img.shields.io/badge/Serilog-1F425F?style=flat-square)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
 ![Visual Studio](https://img.shields.io/badge/Visual_Studio-5C2D91?style=flat-square&logo=visualstudio&logoColor=white)
@@ -129,16 +140,16 @@ _Also studied: Java, Python, C++, C · Computer Networks · Operating Systems ·
 Data Structures &amp; Algorithms · Database Systems · Object-Oriented Programming ·
 Software Engineering · Operating Systems · Computer Networks · Computer Architecture
 
-**Full-Stack Web Development (.NET) — Tuned Applications, Amman** · Nov 2025 – Jan 2026
-8-week intensive program completed as the University of Jordan internship requirement.
-ASP.NET Core MVC with C#, SQL Server and Entity Framework, REST API consumption,
-authentication and authorization fundamentals. Presented a technical report to the
-faculty committee.
+**Full-Stack .NET Developer, Intern — Tuned Applications, Amman** · Nov 2025 – Jan 2026
+Delivered a full-stack ASP.NET Core MVC application to written specification over an
+Entity Framework Core data layer on SQL Server, secured every non-public endpoint with
+ASP.NET Core Identity sign-in and role-based authorization, and shipped each feature
+inside a one-week Agile iteration across eight review cycles.
 
 ---
 
 <p align="center">
   Arabic (native) · English (professional working proficiency)<br/>
-  <b>Open to Junior .NET / Backend Developer roles — Jordan &amp; GCC.</b><br/>
+  <b>Open to .NET / Backend Developer roles — Jordan &amp; GCC.</b><br/>
   <a href="mailto:saeed.ramadan.cv@gmail.com">saeed.ramadan.cv@gmail.com</a>
 </p>
