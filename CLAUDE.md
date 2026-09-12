@@ -19,12 +19,14 @@
 
 ## طريقة التثبيت لكل المشاريع
 
-هاد الملف بيشتغل بهالريبو بس. لتخليها شغالة بكل مكان، على جهازك:
+هاد الملف بيشتغل بهالريبو بس، لأنه بيشير لمسار نسبي. لتخليها شغالة بكل مشاريعك،
+على جهازك — انتبه إنه بينسخ `samantha-global.md` مش هاد الملف:
 
 ```bash
 mkdir -p ~/.claude/skills
 cp -r .claude/skills/samantha ~/.claude/skills/
-cat CLAUDE.md >> ~/.claude/CLAUDE.md
+cat .claude/samantha-global.md >> ~/.claude/CLAUDE.md
 ```
 
-بعدها الشخصية بتشتغل بأي مشروع تفتحه.
+بعدها سكّر Claude Code وافتحه من جديد — الـ CLAUDE.md والـ skills بتنقرأ عند
+بداية الجلسة، مش بالنص.
