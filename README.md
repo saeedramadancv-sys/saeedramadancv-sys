@@ -90,6 +90,32 @@ entire client application, ~2,200 lines of dependency-free ES6 across 8 modules.
 
 ---
 
+## 🔌 Digital design
+
+### [verilog-digital-design](https://github.com/saeedramadancv-sys/verilog-digital-design) — RTL and verification
+Verilog · VHDL · Icarus Verilog · GHDL · GTKWave · CI
+
+Computer Engineering is where I started, and this is me coming back to it. A
+parameterised ALU and a Moore finite state machine, written twice - once in
+Verilog and once in VHDL - and held to the same test vectors.
+
+- **Self-checking testbenches, not waveform-watching.** 51 assertions compare
+  every output against an independently computed value and exit non-zero on
+  failure, so both languages simulate in CI on every push.
+- **Carry and overflow are kept separate**, because they answer different
+  questions: `100 + 50` sets overflow with no carry, `-1 + 1` sets carry with
+  none. Two test vectors exist only to pin that down.
+- **One adder, not two.** Subtraction is `a + (~b) + 1`, so `ADD`, `SUB` and
+  `SLT` share a single carry chain instead of inferring one each.
+- **Overlapping detection.** After a match the FSM falls back to the longest
+  suffix that is also a prefix of the pattern, so `1011011` yields two
+  detections rather than one.
+
+Every design decision is written up in
+[docs](https://github.com/saeedramadancv-sys/verilog-digital-design/blob/main/docs/%D8%B4%D8%B1%D8%AD_%D8%A7%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85.md).
+
+---
+
 ## 🛠 Tech
 
 **Backend**
@@ -109,6 +135,15 @@ entire client application, ~2,200 lines of dependency-free ES6 across 8 modules.
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
 ![T-SQL](https://img.shields.io/badge/T--SQL-CC2927?style=flat-square)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+
+**Hardware description**
+
+![Verilog](https://img.shields.io/badge/Verilog-1A1A1A?style=flat-square)
+![VHDL](https://img.shields.io/badge/VHDL-4B0082?style=flat-square)
+![Quartus](https://img.shields.io/badge/Intel_Quartus-0071C5?style=flat-square&logo=intel&logoColor=white)
+![ModelSim](https://img.shields.io/badge/ModelSim-005386?style=flat-square)
+![GHDL](https://img.shields.io/badge/GHDL-2C3E50?style=flat-square)
+![LTspice](https://img.shields.io/badge/LTspice-CC0000?style=flat-square)
 
 **DevOps &amp; Tools**
 
