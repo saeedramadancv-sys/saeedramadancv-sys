@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  Computer Engineering, The University of Jordan &nbsp;·&nbsp; Amman, Jordan &nbsp;·&nbsp; Open to Jordan &amp; GCC
+  Computer Engineering, The University of Jordan &nbsp;·&nbsp; Amman, Jordan &nbsp;·&nbsp; Open to Jordan &amp; the GCC, Dubai in particular
 </p>
 
 <p align="center">
@@ -16,8 +16,8 @@
 
 ---
 
-I build **.NET web applications and ship them** — the projects below are running on live
-public URLs right now, not sitting in a folder.
+I build **.NET web applications and ship them** — three of the projects below are running
+on live public URLs right now, and the fourth is the one I would open first in an interview.
 
 I graduated in Computer Engineering from the University of Jordan in January 2026 and
 went deep on the Microsoft stack: C#, ASP.NET Core (Web API & MVC), Entity Framework Core
@@ -26,11 +26,41 @@ doesn't show in a demo — validating input at the boundary, protecting every wr
 and putting a unique index behind the code that assumes uniqueness.
 
 **Looking for:** a .NET / Backend Developer role where I can learn from an
-experienced team and own real features. **In Kuwait for in-person interviews from early October 2026**; open across the GCC.
+experienced team and own real features. **Available to relocate** — Dubai and the wider
+GCC, or Amman.
 
 ---
 
-## 🚀 Live projects
+## 🚀 Projects
+
+### 🔒 [SlotLock](https://github.com/saeedramadancv-sys/slotlock) — booking API built for the moment two people want the same seat
+[![CI](https://github.com/saeedramadancv-sys/slotlock/actions/workflows/ci.yml/badge.svg)](https://github.com/saeedramadancv-sys/slotlock/actions/workflows/ci.yml) · ASP.NET Core 9 · EF Core 9 · SQL Server · xUnit · Serilog · Prometheus
+
+Booking systems are easy to write and hard to get right. Count the bookings, insert one
+more if there is room — it passes every test you write by hand and oversells the moment two
+requests arrive together. This is the version that holds up.
+
+- **Overbooking prevented in three layers.** The seat count lives on the slot row, so
+  deciding and writing are one operation with no gap between them. A SQL Server
+  `rowversion` makes a stale write match zero rows, and the loser retries against fresh
+  state. A `CHECK` constraint refuses an oversell if the first two are ever wrong. No
+  pessimistic locking — a row lock held across a request turns a popular slot into a queue.
+- **Proved, not asserted.** 50 simultaneous HTTP requests for one seat: **1 created, 49
+  conflicted**, and the database agrees. **85 tests**, 25 of them against real SQL Server
+  over real HTTP — because the concurrency token, the CHECK constraint and the unique index
+  are the things being proved, and an in-memory provider implements none of them.
+- **Retried requests never book twice.** An `Idempotency-Key` is claimed by an INSERT under
+  a unique index *before* the work runs, so two simultaneous retries cannot both proceed.
+- **Notifications never fire for work that rolled back.** A transactional outbox writes the
+  booking and its message in the same `SaveChanges`; a dispatcher delivers with exponential
+  backoff and dead-letters what will never succeed.
+- **Holds that expire**, so a seat leaves the shelf during checkout without being lost if
+  the customer walks away — and a lapsed hold can never be confirmed, whether or not the
+  sweeper has run. Correctness that depends on a background job firing on time is
+  correctness that fails under load.
+- **Three bugs its own tests caught** are written up in the README, including a retry budget
+  that refused a free seat under contention, and a one-line config value that meant 24 days
+  where it read like 24 hours.
 
 ### 📡 [NetWatch](https://github.com/saeedramadancv-sys/netwatch) — network &amp; service availability monitoring
 [**▶ Try it live**](https://netwatch-rbmr.onrender.com) · ASP.NET Core 9 Web API · EF Core 9 · Identity + JWT · SignalR · Redis · Angular 19 · xUnit
@@ -128,6 +158,7 @@ Every design decision is written up in
 ![SignalR](https://img.shields.io/badge/SignalR-512BD4?style=flat-square)
 ![JWT](https://img.shields.io/badge/JWT_Auth-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
 ![xUnit](https://img.shields.io/badge/xUnit-512BD4?style=flat-square)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
 
 **Data**
 
@@ -185,6 +216,6 @@ inside a one-week Agile iteration across eight review cycles.
 
 <p align="center">
   Arabic (native) · English (professional working proficiency)<br/>
-  <b>Open to .NET / Backend Developer roles — Jordan &amp; GCC.</b><br/>
+  <b>Open to .NET / Backend Developer roles — Amman, Dubai and the GCC.</b><br/>
   <a href="mailto:saeed.ramadan.cv@gmail.com">saeed.ramadan.cv@gmail.com</a>
 </p>
