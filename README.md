@@ -120,7 +120,27 @@ entire client application, ~2,200 lines of dependency-free ES6 across 8 modules.
 
 ---
 
-## 🔌 Digital design
+## 🔌 Computer engineering
+
+### [TechNova network design](https://github.com/saeedramadancv-sys/technova-network-design) — multi-site enterprise network
+Cisco IOS · Packet Tracer · OSPFv2 · VLSM · NAT/PAT · VLANs · ACLs
+
+A three-site design — headquarters in Amman, branches in Irbid and Aqaba — taken
+through the full cycle: requirements, addressing, switching, routing, services,
+security, build guide and test plan.
+
+- **Nine paste-ready IOS configurations**, and every address in them derived by VLSM
+  from a single `172.16.0.0/16` rather than invented per device — so each site is one
+  contiguous block and summarises into one route at the area border.
+- **Multi-area OSPFv2** with MD5 authentication and `area range` summarisation, cutting
+  the branch routes carried into the backbone from eight to two. Reference bandwidth is
+  raised, because at the default every link above 100 Mbps costs the same and the metric
+  stops meaning anything.
+- **A 60-case test plan** where each case names the command and the exact expected
+  output. A test whose expected result is "it should work" is not a test.
+- **Twelve security controls, each mapped to the threat it answers** — and the two places
+  where a stateless ACL is weaker than a real firewall are named in the write-up rather
+  than left for a reader to find.
 
 ### [verilog-digital-design](https://github.com/saeedramadancv-sys/verilog-digital-design) — RTL and verification
 Verilog · VHDL · Icarus Verilog · GHDL · GTKWave · CI
@@ -166,6 +186,15 @@ Every design decision is written up in
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
 ![T-SQL](https://img.shields.io/badge/T--SQL-CC2927?style=flat-square)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+
+**Networking**
+
+![Cisco IOS](https://img.shields.io/badge/Cisco_IOS-1BA0D7?style=flat-square&logo=cisco&logoColor=white)
+![OSPF](https://img.shields.io/badge/OSPFv2-1BA0D7?style=flat-square)
+![VLSM](https://img.shields.io/badge/VLSM_%2F_Subnetting-1BA0D7?style=flat-square)
+![VLAN](https://img.shields.io/badge/VLANs_%2F_802.1Q-1BA0D7?style=flat-square)
+![NAT](https://img.shields.io/badge/NAT_%2F_PAT-1BA0D7?style=flat-square)
+![Packet Tracer](https://img.shields.io/badge/Packet_Tracer-1BA0D7?style=flat-square&logo=cisco&logoColor=white)
 
 **Hardware description**
 
