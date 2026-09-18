@@ -1,11 +1,12 @@
 <h1 align="center">Saeed Adel Ramadan</h1>
 
 <p align="center">
-  <b>.NET Backend Developer</b> — ASP.NET Core · C# · SQL Server · Entity Framework Core
+  <b>.NET Backend Developer</b> — ASP.NET Core · C# · SQL Server · Entity Framework Core<br/>
+  <b>Networking</b> — Cisco IOS · OSPF · VLANs · CCNA in progress
 </p>
 
 <p align="center">
-  Computer Engineering, The University of Jordan &nbsp;·&nbsp; Amman, Jordan &nbsp;·&nbsp; Open to Jordan &amp; the GCC, Dubai in particular
+  Computer Engineering, The University of Jordan &nbsp;·&nbsp; Amman, Jordan &nbsp;·&nbsp; Open to roles in Amman &amp; the UAE
 </p>
 
 <p align="center">
@@ -19,15 +20,19 @@
 I build **.NET web applications and ship them** — three of the projects below are running
 on live public URLs right now, and the fourth is the one I would open first in an interview.
 
-I graduated in Computer Engineering from the University of Jordan in January 2026 and
-went deep on the Microsoft stack: C#, ASP.NET Core (Web API & MVC), Entity Framework Core
+I graduated in Computer Engineering from the University of Jordan in January 2026, then spent
+about a year of hands-on work - a six-month full-stack internship at Tuned Applications and
+independent projects since - going deep on the Microsoft stack: C#, ASP.NET Core (Web API & MVC), Entity Framework Core
 and SQL Server, with Angular, Docker and CI/CD around them. What I care about is the part that
 doesn't show in a demo — validating input at the boundary, protecting every write path,
 and putting a unique index behind the code that assumes uniqueness.
 
-**Looking for:** a .NET / Backend Developer role where I can learn from an
-experienced team and own real features. **Available to relocate** — Dubai and the wider
-GCC, or Amman.
+I also understand the network underneath the code: I designed a multi-site enterprise
+network in Cisco IOS and am currently self-studying for the CCNA (in progress).
+
+**Looking for:** a .NET / Backend Developer or junior Network Engineer role where I can
+learn from an experienced team and own real features - in Amman or the UAE. Available
+immediately, and eligible for the UAE Job-Seeker Visa.
 
 ---
 
@@ -69,7 +74,7 @@ My most complete project — built the way a production monitoring tool is built
 every non-obvious decision documented in the code.
 
 - **Clean Architecture** — Domain / Application / Infrastructure / Api, an Angular 19 SPA,
-  and **100+ automated tests** (xUnit + Karma) enforced in a GitHub Actions CI pipeline.
+  and **144 automated tests** (125 xUnit + 19 Karma) enforced in a GitHub Actions CI pipeline.
 - **Real authentication** — ASP.NET Core Identity + JWT with refresh-token rotation
   (SHA-256-hashed, single-use, whole-chain revocation on replay), lockout, and login
   responses that don't leak whether an email exists.
@@ -146,8 +151,8 @@ security, build guide and test plan.
 Verilog · VHDL · Icarus Verilog · GHDL · GTKWave · CI
 
 Computer Engineering is where I started, and this is me coming back to it. A
-parameterised ALU and a Moore finite state machine, written twice - once in
-Verilog and once in VHDL - and held to the same test vectors.
+parameterised ALU, written twice - once in Verilog and once in VHDL-2008 - and
+held to the same test vectors, plus a Moore finite state machine in Verilog.
 
 - **Self-checking testbenches, not waveform-watching.** 51 assertions compare
   every output against an independently computed value and exit non-zero on
@@ -235,16 +240,22 @@ _Also studied: Java, Python, C++, C · Computer Networks · Operating Systems ·
 Data Structures &amp; Algorithms · Database Systems · Object-Oriented Programming ·
 Software Engineering · Operating Systems · Computer Networks · Computer Architecture
 
-**Full-Stack .NET Developer, Intern — Tuned Applications, Amman** · Nov 2025 – Jan 2026
+**Independent Software Developer — Amman** · May 2026 – Present
+Designed and built SlotLock and NetWatch to production standards - Clean Architecture
+ASP.NET Core 9 back ends, EF Core 9 on SQL Server, an Angular 19 client and 229 automated
+tests across both - plus the TechNova network design and the digital-design RTL work.
+
+**Full-Stack .NET Developer, Intern — Tuned Applications, Amman** · Nov 2025 – Apr 2026
 Delivered a full-stack ASP.NET Core MVC application to written specification over an
-Entity Framework Core data layer on SQL Server, secured every non-public endpoint with
-ASP.NET Core Identity sign-in and role-based authorization, and shipped each feature
-inside a one-week Agile iteration across eight review cycles.
+Entity Framework Core data layer on SQL Server, and built ShortLink as the training
+project. Secured every non-public endpoint with ASP.NET Core Identity sign-in and
+role-based authorization, and shipped each feature inside a one-week Agile iteration
+across eight review cycles.
 
 ---
 
 <p align="center">
   Arabic (native) · English (professional working proficiency)<br/>
-  <b>Open to .NET / Backend Developer roles — Amman, Dubai and the GCC.</b><br/>
+  <b>Open to .NET / Backend Developer and junior Network Engineer roles — Amman and the UAE.</b><br/>
   <a href="mailto:saeed.ramadan.cv@gmail.com">saeed.ramadan.cv@gmail.com</a>
 </p>
