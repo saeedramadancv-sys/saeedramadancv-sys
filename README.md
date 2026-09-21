@@ -38,7 +38,7 @@ immediately, and eligible for the UAE Job-Seeker Visa.
 
 ## 🚀 Projects
 
-### 🔒 [SlotLock](https://github.com/saeedramadancv-sys/slotlock) — booking API built for the moment two people want the same seat
+### 🔒 [SlotLock](https://github.com/saeedramadancv-sys/slotlock) — booking API built for the moment two people want the same seat · Sep 2026
 [![CI](https://github.com/saeedramadancv-sys/slotlock/actions/workflows/ci.yml/badge.svg)](https://github.com/saeedramadancv-sys/slotlock/actions/workflows/ci.yml) · ASP.NET Core 9 · EF Core 9 · SQL Server · xUnit · Serilog · Prometheus
 
 Booking systems are easy to write and hard to get right. Count the bookings, insert one
@@ -67,7 +67,7 @@ requests arrive together. This is the version that holds up.
   that refused a free seat under contention, and a one-line config value that meant 24 days
   where it read like 24 hours.
 
-### 📡 [NetWatch](https://github.com/saeedramadancv-sys/netwatch) — network &amp; service availability monitoring
+### 📡 [NetWatch](https://github.com/saeedramadancv-sys/netwatch) — network &amp; service availability monitoring · Apr 2026
 [**▶ Try it live**](https://netwatch-rbmr.onrender.com) · ASP.NET Core 9 Web API · EF Core 9 · Identity + JWT · SignalR · Redis · Angular 19 · xUnit
 
 My most complete project — built the way a production monitoring tool is built, with
@@ -91,7 +91,7 @@ every non-obvious decision documented in the code.
   Redis and Azure SQL, with an OIDC-authenticated deployment workflow, plus Serilog
   structured logging throughout.
 
-### 🔗 [ShortLink](https://github.com/saeedramadancv-sys/url-shortener) — URL shortener with click analytics
+### 🔗 [ShortLink](https://github.com/saeedramadancv-sys/url-shortener) — URL shortener with click analytics · Jan 2026
 [**▶ Try it live**](https://url-shortener-cc59.onrender.com) · ASP.NET Core MVC (.NET 9) · EF Core 9 · SQL Server / SQLite · Docker
 
 A full-stack URL shortener with a per-link analytics dashboard: a 14-day click time
@@ -107,7 +107,7 @@ normalized two-table schema.
 - **One-push deploys** — multi-stage Dockerfile (SDK build → slim ASP.NET runtime) plus an
   Infrastructure-as-Code blueprint.
 
-### 🕌 [QuranVerse](https://github.com/saeedramadancv-sys/quranverse) — Arabic transcription &amp; verification engine
+### 🕌 [QuranVerse](https://github.com/saeedramadancv-sys/quranverse) — Arabic transcription &amp; verification engine · Jan 2025
 [**▶ Try it live**](https://saeedramadancv-sys.github.io/quranverse) · JavaScript (ES6+) · Web Audio API · PWA / Offline · Capacitor · GitHub Actions
 
 My graduation project. Front-end lead on a two-person team — I designed and wrote the
@@ -127,7 +127,7 @@ entire client application, ~2,200 lines of dependency-free ES6 across 8 modules.
 
 ## 🔌 Computer engineering
 
-### [TechNova network design](https://github.com/saeedramadancv-sys/technova-network-design) — multi-site enterprise network
+### [TechNova network design](https://github.com/saeedramadancv-sys/technova-network-design) — multi-site enterprise network · Aug 2026
 Cisco IOS · Packet Tracer · OSPFv2 · VLSM · NAT/PAT · VLANs · ACLs
 
 A three-site design — headquarters in Amman, branches in Irbid and Aqaba — taken
@@ -147,7 +147,7 @@ security, build guide and test plan.
   where a stateless ACL is weaker than a real firewall are named in the write-up rather
   than left for a reader to find.
 
-### [verilog-digital-design](https://github.com/saeedramadancv-sys/verilog-digital-design) — RTL and verification
+### [verilog-digital-design](https://github.com/saeedramadancv-sys/verilog-digital-design) — RTL and verification · Sep 2026
 Verilog · VHDL · Icarus Verilog · GHDL · GTKWave · CI
 
 Computer Engineering is where I started, and this is me coming back to it. A
@@ -240,7 +240,7 @@ _Also studied: Java, Python, C++, C · Computer Networks · Operating Systems ·
 Data Structures &amp; Algorithms · Database Systems · Object-Oriented Programming ·
 Software Engineering · Operating Systems · Computer Networks · Computer Architecture
 
-**Independent Software Developer — Amman** · May 2026 – Present
+**Independent Software Developer — Amman** · Apr 2026 – Present
 Designed and built SlotLock and NetWatch to production standards - Clean Architecture
 ASP.NET Core 9 back ends, EF Core 9 on SQL Server, an Angular 19 client and 229 automated
 tests across both - plus the TechNova network design and the digital-design RTL work.
