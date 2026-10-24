@@ -67,7 +67,7 @@ requests arrive together. This is the version that holds up.
   that refused a free seat under contention, and a one-line config value that meant 24 days
   where it read like 24 hours.
 
-### 📡 [NetWatch](https://github.com/saeedramadancv-sys/netwatch) — network &amp; service availability monitoring · Apr 2026
+### 📡 [NetWatch](https://github.com/saeedramadancv-sys/netwatch) — network &amp; service availability monitoring · Jul 2026
 [**▶ Try it live**](https://netwatch-rbmr.onrender.com) · ASP.NET Core 9 Web API · EF Core 9 · Identity + JWT · SignalR · Redis · Angular 19 · xUnit
 
 My most complete project — built the way a production monitoring tool is built, with
@@ -92,7 +92,7 @@ every non-obvious decision documented in the code.
   demo runs on Render), plus Serilog
   structured logging throughout.
 
-### 🔗 [ShortLink](https://github.com/saeedramadancv-sys/url-shortener) — URL shortener with click analytics · Jan 2026
+### 🔗 [ShortLink](https://github.com/saeedramadancv-sys/url-shortener) — URL shortener with click analytics · Jul 2026
 [**▶ Try it live**](https://url-shortener-cc59.onrender.com) · ASP.NET Core MVC (.NET 9) · EF Core 9 · SQL Server / SQLite · Docker
 
 A full-stack URL shortener with a per-link analytics dashboard: a 14-day click time
@@ -108,7 +108,7 @@ normalized two-table schema.
 - **One-push deploys** — multi-stage Dockerfile (SDK build → slim ASP.NET runtime) plus an
   Infrastructure-as-Code blueprint.
 
-### 🕌 [QuranVerse](https://github.com/saeedramadancv-sys/quranverse) — Arabic transcription &amp; verification engine · Jan 2025
+### 🕌 [QuranVerse](https://github.com/saeedramadancv-sys/quranverse) — Arabic transcription &amp; verification engine · Sep 2025 – Jan 2026
 [**▶ Try it live**](https://saeedramadancv-sys.github.io/quranverse) · JavaScript (ES6+) · Web Audio API · PWA / Offline · Capacitor · GitHub Actions
 
 My graduation project. Front-end lead on a two-person team — I designed and wrote the
@@ -133,7 +133,8 @@ Cisco IOS · Packet Tracer · OSPFv2 · VLSM · NAT/PAT · VLANs · ACLs
 
 A three-site design — headquarters in Amman, branches in Irbid and Aqaba — taken
 through the full cycle: requirements, addressing, switching, routing, services,
-security, build guide and test plan.
+security, build guide and test plan. It is a design on paper: the configurations
+and the test plan are ready, but I have not built it in Packet Tracer yet.
 
 - **Nine paste-ready IOS configurations**, and every address in them derived by VLSM
   from a single `172.16.0.0/16` rather than invented per device — so each site is one
@@ -237,15 +238,14 @@ _Also studied: Java, Python, C++, C · Computer Networks · Operating Systems ·
 Data Structures &amp; Algorithms · Database Systems · Object-Oriented Programming ·
 Software Engineering · Operating Systems · Computer Networks · Computer Architecture
 
-**Independent Software Developer — Amman** · Apr 2026 – Present
+**Independent Software Developer — Amman** · Jul 2026 – Present
 Designed and built SlotLock and NetWatch to production standards - Clean Architecture
 ASP.NET Core 9 back ends, EF Core 9 on SQL Server, an Angular 19 client and 229 automated
 tests across both - plus the TechNova network design and the digital-design RTL work.
 
 **Full-Stack .NET Developer, Intern — Tuned Applications, Amman** · Nov 2025 – Apr 2026
 Delivered a full-stack ASP.NET Core MVC application to written specification over an
-Entity Framework Core data layer on SQL Server, and built ShortLink as the training
-project. Secured every non-public endpoint with ASP.NET Core Identity sign-in and
+Entity Framework Core data layer on SQL Server. Secured every non-public endpoint with ASP.NET Core Identity sign-in and
 role-based authorization, and shipped each feature inside a one-week Agile iteration
 across eight review cycles.
 
