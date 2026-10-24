@@ -216,7 +216,6 @@ held to the same test vectors, plus a Moore finite state machine in Verilog.
 ![Bicep](https://img.shields.io/badge/Bicep-0078D4?style=flat-square)
 ![Serilog](https://img.shields.io/badge/Serilog-1F425F?style=flat-square)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
 ![Visual Studio](https://img.shields.io/badge/Visual_Studio-5C2D91?style=flat-square&logo=visualstudio&logoColor=white)
 
 **Front-end**
