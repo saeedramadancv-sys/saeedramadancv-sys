@@ -88,7 +88,8 @@ every non-obvious decision documented in the code.
   thirty seconds into an outage is worse than no wall at all. Cache failures cost
   latency, never availability.
 - **Infrastructure as code** — a Bicep template provisioning App Service, Azure Cache for
-  Redis and Azure SQL, with an OIDC-authenticated deployment workflow, plus Serilog
+  Redis and Azure SQL, with an OIDC-authenticated deployment workflow (written, not yet deployed: the live
+  demo runs on Render), plus Serilog
   structured logging throughout.
 
 ### 🔗 [ShortLink](https://github.com/saeedramadancv-sys/url-shortener) — URL shortener with click analytics · Jan 2026
@@ -99,10 +100,10 @@ series, top-referrer ranking and a recent-clicks log, aggregated with LINQ over 
 normalized two-table schema.
 
 - **Provider-agnostic data layer** — EF Core provider chosen at runtime from configuration.
-  SQL Server in production, SQLite for a zero-setup local run, no code changes.
+  SQL Server by default, SQLite with one setting (the live demo runs on SQLite), no code changes.
 - **Security-first write paths** — anti-forgery (CSRF) tokens on every POST, server-side
   URL scheme allow-listing, regex-validated aliases, bounded untrusted input.
-- **Collision-free codes** — a cryptographically secure RNG over a 56-character
+- **Collision-free codes** — a cryptographically secure RNG over a 57-character
   ambiguity-free alphabet (`0/O` and `1/l/I` removed), guarded by a unique index and a retry loop.
 - **One-push deploys** — multi-stage Dockerfile (SDK build → slim ASP.NET runtime) plus an
   Infrastructure-as-Code blueprint.
@@ -154,7 +155,7 @@ Computer Engineering is where I started, and this is me coming back to it. A
 parameterised ALU, written twice - once in Verilog and once in VHDL-2008 - and
 held to the same test vectors, plus a Moore finite state machine in Verilog.
 
-- **Self-checking testbenches, not waveform-watching.** 51 assertions compare
+- **Self-checking testbenches, not waveform-watching.** 72 checks compare
   every output against an independently computed value and exit non-zero on
   failure, so both languages simulate in CI on every push.
 - **Carry and overflow are kept separate**, because they answer different
@@ -165,9 +166,6 @@ held to the same test vectors, plus a Moore finite state machine in Verilog.
 - **Overlapping detection.** After a match the FSM falls back to the longest
   suffix that is also a prefix of the pattern, so `1011011` yields two
   detections rather than one.
-
-Every design decision is written up in
-[docs](https://github.com/saeedramadancv-sys/verilog-digital-design/blob/main/docs/%D8%B4%D8%B1%D8%AD_%D8%A7%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85.md).
 
 ---
 
@@ -214,7 +212,6 @@ Every design decision is written up in
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![Bicep](https://img.shields.io/badge/Bicep-0078D4?style=flat-square)
 ![Serilog](https://img.shields.io/badge/Serilog-1F425F?style=flat-square)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
