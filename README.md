@@ -1,12 +1,8 @@
-<h1 align="center">Saeed Adel Ramadan</h1>
+<h1 align="center">Saeed Ramadan</h1>
 
 <p align="center">
-  <b>.NET Backend Developer</b> — ASP.NET Core · C# · SQL Server · Entity Framework Core<br/>
-  <b>Networking</b> — Cisco IOS · OSPF · VLANs · CCNA in progress
-</p>
-
-<p align="center">
-  Computer Engineering, The University of Jordan &nbsp;·&nbsp; Amman, Jordan &nbsp;·&nbsp; Open to roles in Amman &amp; the UAE
+  .NET backend developer · Amman, Jordan<br/>
+  Computer Engineering, University of Jordan (graduated January 2026)
 </p>
 
 <p align="center">
@@ -15,162 +11,112 @@
   <img src="https://img.shields.io/badge/Open_to_work-2ea44f?style=flat-square" alt="Open to work"/>
 </p>
 
----
+I mostly write C# and ASP.NET Core, with SQL Server and EF Core underneath and Angular on top
+when a project needs a UI. Three of the projects below are live, so you can click around
+instead of taking my word for it.
 
-I build **.NET web applications and ship them** — three of the projects below are running
-on live public URLs right now, and the fourth is the one I would open first in an interview.
+I'm looking for a junior .NET or backend role in Amman or the UAE, and I can start right away
+(I'm eligible for the UAE job-seeker visa). I'm also studying for the CCNA, so a junior network
+role interests me too.
 
-I graduated in Computer Engineering from the University of Jordan in January 2026, then spent
-about a year of hands-on work - a six-month full-stack internship at Tuned Applications and
-independent projects since - going deep on the Microsoft stack: C#, ASP.NET Core (Web API & MVC), Entity Framework Core
-and SQL Server, with Angular, Docker and CI/CD around them. What I care about is the part that
-doesn't show in a demo — validating input at the boundary, protecting every write path,
-and putting a unique index behind the code that assumes uniqueness.
+## Projects
 
-I also understand the network underneath the code: I designed a multi-site enterprise
-network in Cisco IOS and am currently self-studying for the CCNA (in progress).
-
-**Looking for:** a .NET / Backend Developer or junior Network Engineer role where I can
-learn from an experienced team and own real features - in Amman or the UAE. Available
-immediately, and eligible for the UAE Job-Seeker Visa.
-
----
-
-## 🚀 Projects
-
-### 🔒 [SlotLock](https://github.com/saeedramadancv-sys/slotlock) — booking API built for the moment two people want the same seat · Sep 2026
+### [SlotLock](https://github.com/saeedramadancv-sys/slotlock): booking API · Sep 2026
 [![CI](https://github.com/saeedramadancv-sys/slotlock/actions/workflows/ci.yml/badge.svg)](https://github.com/saeedramadancv-sys/slotlock/actions/workflows/ci.yml) · ASP.NET Core 9 · EF Core 9 · SQL Server · xUnit · Serilog · Prometheus
 
-Booking systems are easy to write and hard to get right. Count the bookings, insert one
-more if there is room — it passes every test you write by hand and oversells the moment two
-requests arrive together. This is the version that holds up.
+A booking API built around one problem: two people trying to book the last seat at the same
+moment. Counting bookings and inserting one more if there's room passes every test you write by
+hand, and then oversells the first time two requests arrive together. I wanted a version that
+doesn't.
 
-- **Overbooking prevented in three layers.** The seat count lives on the slot row, so
-  deciding and writing are one operation with no gap between them. A SQL Server
-  `rowversion` makes a stale write match zero rows, and the loser retries against fresh
-  state. A `CHECK` constraint refuses an oversell if the first two are ever wrong. No
-  pessimistic locking — a row lock held across a request turns a popular slot into a queue.
-- **Proved, not asserted.** 50 simultaneous HTTP requests for one seat: **1 created, 49
-  conflicted**, and the database agrees. **85 tests**, 25 of them against real SQL Server
-  over real HTTP — because the concurrency token, the CHECK constraint and the unique index
-  are the things being proved, and an in-memory provider implements none of them.
-- **Retried requests never book twice.** An `Idempotency-Key` is claimed by an INSERT under
-  a unique index *before* the work runs, so two simultaneous retries cannot both proceed.
-- **Notifications never fire for work that rolled back.** A transactional outbox writes the
-  booking and its message in the same `SaveChanges`; a dispatcher delivers with exponential
-  backoff and dead-letters what will never succeed.
-- **Holds that expire**, so a seat leaves the shelf during checkout without being lost if
-  the customer walks away — and a lapsed hold can never be confirmed, whether or not the
-  sweeper has run. Correctness that depends on a background job firing on time is
-  correctness that fails under load.
-- **Three bugs its own tests caught** are written up in the README, including a retry budget
-  that refused a free seat under contention, and a one-line config value that meant 24 days
-  where it read like 24 hours.
+- I sent 50 requests for one seat at the same time. 1 booking went through, 49 got a conflict,
+  and the database agreed.
+- The seat count lives on the slot row with a SQL Server `rowversion`, so a stale write updates
+  nothing and retries against fresh data. A `CHECK` constraint refuses an oversell if that ever
+  fails.
+- Retrying a request is safe. An `Idempotency-Key` is claimed through a unique index before any
+  work runs, so two retries can't both go through.
+- Holds expire, and an expired hold can't be confirmed even if the cleanup job hasn't run yet.
+- Notifications go through a transactional outbox, so nothing goes out for a booking that rolled
+  back.
+- 85 tests, 25 of them against a real SQL Server. The in-memory provider has no rowversion or
+  CHECK constraints, and those are exactly what I needed to test.
+- The README writes up three bugs the tests caught. My favourite: `"24:00:00"` in appsettings
+  means 24 days, not 24 hours.
 
-### 📡 [NetWatch](https://github.com/saeedramadancv-sys/netwatch) — network &amp; service availability monitoring · Jul 2026
-[**▶ Try it live**](https://netwatch-rbmr.onrender.com) · ASP.NET Core 9 Web API · EF Core 9 · Identity + JWT · SignalR · Redis · Angular 19 · xUnit
+### [NetWatch](https://github.com/saeedramadancv-sys/netwatch): network and service monitoring · Jul 2026
+[Try it live](https://netwatch-rbmr.onrender.com) · ASP.NET Core 9 · EF Core 9 · Identity + JWT · SignalR · Redis · Angular 19 · xUnit
 
-My most complete project — built the way a production monitoring tool is built, with
-every non-obvious decision documented in the code.
+My biggest project. You add devices (routers, servers, websites), attach ping, TCP or HTTP
+checks, and watch status, response times and incidents update live. It works in English and
+Arabic.
 
-- **Clean Architecture** — Domain / Application / Infrastructure / Api, an Angular 19 SPA,
-  and **144 automated tests** (125 xUnit + 19 Karma) enforced in a GitHub Actions CI pipeline.
-- **Real authentication** — ASP.NET Core Identity + JWT with refresh-token rotation
-  (SHA-256-hashed, single-use, whole-chain revocation on replay), lockout, and login
-  responses that don't leak whether an email exists.
-- **A real scheduler** — a `BackgroundService` on a drift-free `PeriodicTimer`, a DI scope
-  per check, a `SemaphoreSlim` concurrency cap, and a debounced Down/Up state machine so
-  one dropped packet never raises a false incident.
-- **Provider-agnostic data** — EF Core 9 with separate SQLite / SQL Server migration
-  assemblies; live updates pushed to the dashboard over SignalR; bilingual EN / AR (RTL).
-- **Event-driven caching** — the dashboard summary is cached in Redis and retired the
-  moment a probe changes state, not left to a TTL: a monitoring wall showing "all up"
-  thirty seconds into an outage is worse than no wall at all. Cache failures cost
-  latency, never availability.
-- **Infrastructure as code** — a Bicep template provisioning App Service, Azure Cache for
-  Redis and Azure SQL, with an OIDC-authenticated deployment workflow (written, not yet deployed: the live
-  demo runs on Render), plus Serilog
-  structured logging throughout.
+- Clean Architecture backend and an Angular 19 front end, with 144 automated tests (125 xUnit +
+  19 Karma) running in GitHub Actions.
+- Login uses ASP.NET Core Identity and JWT. Refresh tokens are hashed and single-use, and reusing
+  one revokes the whole chain.
+- Checks run in a `BackgroundService` on a `PeriodicTimer`, with a limit on how many run at once.
+  A device is only marked down after several failures in a row, so one lost packet doesn't open
+  an incident.
+- The dashboard summary is cached in Redis and cleared the moment a probe changes state, instead
+  of waiting for a timeout. A monitoring screen that says "all up" during an outage is worse than
+  no screen.
+- There's also a Bicep template for Azure. I haven't deployed it yet; the live demo runs on Render.
 
-### 🔗 [ShortLink](https://github.com/saeedramadancv-sys/url-shortener) — URL shortener with click analytics · Jul 2026
-[**▶ Try it live**](https://url-shortener-cc59.onrender.com) · ASP.NET Core MVC (.NET 9) · EF Core 9 · SQL Server / SQLite · Docker
+### [ShortLink](https://github.com/saeedramadancv-sys/url-shortener): URL shortener with click stats · Jul 2026
+[Try it live](https://url-shortener-cc59.onrender.com) · ASP.NET Core MVC (.NET 9) · EF Core 9 · SQL Server / SQLite · Docker
 
-A full-stack URL shortener with a per-link analytics dashboard: a 14-day click time
-series, top-referrer ranking and a recent-clicks log, aggregated with LINQ over a
-normalized two-table schema.
+Shortens links and shows how each one gets used: clicks over the last 14 days, top referrers and
+the latest clicks.
 
-- **Provider-agnostic data layer** — EF Core provider chosen at runtime from configuration.
-  SQL Server by default, SQLite with one setting (the live demo runs on SQLite), no code changes.
-- **Security-first write paths** — anti-forgery (CSRF) tokens on every POST, server-side
-  URL scheme allow-listing, regex-validated aliases, bounded untrusted input.
-- **Collision-free codes** — a cryptographically secure RNG over a 57-character
-  ambiguity-free alphabet (`0/O` and `1/l/I` removed), guarded by a unique index and a retry loop.
-- **One-push deploys** — multi-stage Dockerfile (SDK build → slim ASP.NET runtime) plus an
-  Infrastructure-as-Code blueprint.
+- The database provider is a config setting: SQL Server by default, SQLite with one switch. The
+  live demo runs on SQLite.
+- Every form has CSRF protection, links are checked against a list of allowed schemes, and custom
+  aliases are validated.
+- Short codes come from a cryptographic random generator over a 57-character alphabet with the
+  look-alikes removed (`0/O`, `1/l/I`), and a unique index backs that up.
+- Packaged with a multi-stage Dockerfile.
 
-### 🕌 [QuranVerse](https://github.com/saeedramadancv-sys/quranverse) — Arabic transcription &amp; verification engine · Sep 2025 – Jan 2026
-[**▶ Try it live**](https://saeedramadancv-sys.github.io/quranverse) · JavaScript (ES6+) · Web Audio API · PWA / Offline · Capacitor · GitHub Actions
+### [QuranVerse](https://github.com/saeedramadancv-sys/quranverse): recitation checker · graduation project · Sep 2025 – Jan 2026
+[Try it live](https://saeedramadancv-sys.github.io/quranverse) · JavaScript · PWA · Capacitor · GitHub Actions
 
-My graduation project. Front-end lead on a two-person team — I designed and wrote the
-entire client application, ~2,200 lines of dependency-free ES6 across 8 modules.
+My graduation project at the University of Jordan. You recite or type a passage from Juz' Amma
+and it compares it word by word with the Quran text, marking each word as right, wrong, missing
+or extra.
 
-- **Levenshtein alignment engine** — O(n×m) dynamic programming with backtracking,
-  classifying every word as match, substitution, deletion or insertion.
-- **Arabic normalization pipeline** — 7 classes of orthographic variance (diacritics,
-  tatweel, alef / ya / ta-marbuta / hamza), so undiacritized input scores fairly against
-  diacritized Uthmani text.
-- **Resilient REST layer** — timeouts, explicit status handling and response-shape
-  validation, with automatic fallback to the local engine. The app stayed fully functional
-  while the partner backend was still being built.
-- **Works fully offline** — the complete Juz Amma corpus (37 surahs, 564 ayahs) bundled locally.
+- We were a team of two. I led the front end and wrote the whole client in plain JavaScript.
+- The matching is a word-level Levenshtein alignment, with Arabic text cleanup first, so missing
+  diacritics or different letter forms don't count as mistakes.
+- The text of Juz' Amma (37 surahs, 564 ayahs) ships with the app, so checking typed text works
+  offline. Voice input uses the browser's speech recognition, which needs a connection.
 
----
+## The computer engineering side
 
-## 🔌 Computer engineering
+### [TechNova network design](https://github.com/saeedramadancv-sys/technova-network-design) · Aug 2026
+Cisco IOS · OSPFv2 · VLSM · VLANs · NAT/PAT · ACLs
 
-### [TechNova network design](https://github.com/saeedramadancv-sys/technova-network-design) — multi-site enterprise network · Aug 2026
-Cisco IOS · Packet Tracer · OSPFv2 · VLSM · NAT/PAT · VLANs · ACLs
+A network design for a made-up company with a head office in Amman and branches in Irbid and
+Aqaba. It's a design on paper: the nine IOS configurations and a 60-case test plan are ready,
+but I haven't built it in Packet Tracer yet.
 
-A three-site design — headquarters in Amman, branches in Irbid and Aqaba — taken
-through the full cycle: requirements, addressing, switching, routing, services,
-security, build guide and test plan. It is a design on paper: the configurations
-and the test plan are ready, but I have not built it in Packet Tracer yet.
+- Every address comes from one `172.16.0.0/16` block using VLSM, so each site is one
+  contiguous range.
+- Multi-area OSPFv2 with MD5 authentication and summarisation at the area border.
+- Each of the 60 test cases names the command to run and the exact output to expect.
 
-- **Nine paste-ready IOS configurations**, and every address in them derived by VLSM
-  from a single `172.16.0.0/16` rather than invented per device — so each site is one
-  contiguous block and summarises into one route at the area border.
-- **Multi-area OSPFv2** with MD5 authentication and `area range` summarisation, cutting
-  the branch routes carried into the backbone from eight to two. Reference bandwidth is
-  raised, because at the default every link above 100 Mbps costs the same and the metric
-  stops meaning anything.
-- **A 60-case test plan** where each case names the command and the exact expected
-  output. A test whose expected result is "it should work" is not a test.
-- **Twelve security controls, each mapped to the threat it answers** — and the two places
-  where a stateless ACL is weaker than a real firewall are named in the write-up rather
-  than left for a reader to find.
+### [verilog-digital-design](https://github.com/saeedramadancv-sys/verilog-digital-design) · Sep 2026
+Verilog · VHDL · Icarus Verilog · GHDL · CI
 
-### [verilog-digital-design](https://github.com/saeedramadancv-sys/verilog-digital-design) — RTL and verification · Sep 2026
-Verilog · VHDL · Icarus Verilog · GHDL · GTKWave · CI
+Going back to the hardware half of my degree. A parameterised ALU (8-bit by default) written
+twice, once in Verilog and once in VHDL-2008, both held to the same test vectors, plus a Moore
+state machine that detects the pattern 1011.
 
-Computer Engineering is where I started, and this is me coming back to it. A
-parameterised ALU, written twice - once in Verilog and once in VHDL-2008 - and
-held to the same test vectors, plus a Moore finite state machine in Verilog.
+- 72 self-checking checks run in CI on every push.
+- Carry and overflow are separate flags, with test cases just for the difference: `100 + 50`
+  overflows without a carry, and `-1 + 1` carries without overflowing.
+- The state machine handles overlaps, so `1011011` gives two detections.
 
-- **Self-checking testbenches, not waveform-watching.** 72 checks compare
-  every output against an independently computed value and exit non-zero on
-  failure, so both languages simulate in CI on every push.
-- **Carry and overflow are kept separate**, because they answer different
-  questions: `100 + 50` sets overflow with no carry, `-1 + 1` sets carry with
-  none. Two test vectors exist only to pin that down.
-- **One adder, not two.** Subtraction is `a + (~b) + 1`, so `ADD`, `SUB` and
-  `SLT` share a single carry chain instead of inferring one each.
-- **Overlapping detection.** After a match the FSM falls back to the longest
-  suffix that is also a prefix of the pattern, so `1011011` yields two
-  detections rather than one.
-
----
-
-## 🛠 Tech
+## Tech
 
 **Backend**
 
@@ -229,29 +175,20 @@ held to the same test vectors, plus a Moore finite state machine in Verilog.
 
 _Also studied: Java, Python, C++, C · Computer Networks · Operating Systems · Computer Architecture_
 
----
+## Background
 
-## 🎓 Background
+**B.Sc. Computer Engineering, University of Jordan**, graduated January 2026. The courses I use
+most: data structures and algorithms, databases, OOP, operating systems and computer networks.
 
-**B.Sc. Computer Engineering — The University of Jordan** · Graduated January 2026
-Data Structures &amp; Algorithms · Database Systems · Object-Oriented Programming ·
-Software Engineering · Operating Systems · Computer Networks · Computer Architecture
+**Independent developer, Amman** · Jul 2026 to now. SlotLock, NetWatch and the two engineering
+projects above.
 
-**Independent Software Developer — Amman** · Jul 2026 – Present
-Designed and built SlotLock and NetWatch to production standards - Clean Architecture
-ASP.NET Core 9 back ends, EF Core 9 on SQL Server, an Angular 19 client and 229 automated
-tests across both - plus the TechNova network design and the digital-design RTL work.
-
-**Full-Stack .NET Developer, Intern — Tuned Applications, Amman** · Nov 2025 – Apr 2026
-Delivered a full-stack ASP.NET Core MVC application to written specification over an
-Entity Framework Core data layer on SQL Server. Secured every non-public endpoint with ASP.NET Core Identity sign-in and
-role-based authorization, and shipped each feature inside a one-week Agile iteration
-across eight review cycles.
-
----
+**Full-Stack .NET Developer (Intern), Tuned Applications, Amman** · Nov 2025 to Apr 2026. I built
+a full ASP.NET Core MVC app from a written spec on EF Core and SQL Server, and added sign-in and
+role-based access with ASP.NET Core Identity. We worked in one-week iterations with code review
+on everything.
 
 <p align="center">
   Arabic (native) · English (professional working proficiency)<br/>
-  <b>Open to .NET / Backend Developer and junior Network Engineer roles — Amman and the UAE.</b><br/>
-  <a href="mailto:saeed.ramadan.cv@gmail.com">saeed.ramadan.cv@gmail.com</a>
+  saeed.ramadan.cv@gmail.com
 </p>
