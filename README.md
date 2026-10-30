@@ -1,7 +1,7 @@
-<h1 align="center">Saeed Ramadan</h1>
+<h1 align="center">Saeed Adel Ramadan</h1>
 
 <p align="center">
-  .Net Developer · Amman, Jordan<br/>
+  .Net Backend Developer · Amman, Jordan<br/>
   Computer Engineering, University of Jordan (graduated January 2026)
 </p>
 
