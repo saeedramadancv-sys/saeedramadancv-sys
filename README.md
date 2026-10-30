@@ -63,7 +63,7 @@ doesn't.
 - The README writes up three bugs the tests caught. My favourite: `"24:00:00"` in appsettings
   means 24 days, not 24 hours.
 
-### [ShortLink](https://github.com/saeedramadancv-sys/url-shortener): URL shortener with click stats · Jul 2026
+### [ShortLink](https://github.com/saeedramadancv-sys/url-shortener): URL shortener with click stats · Internship training project at Tuned Applications, Nov 2025 – Apr 2026
 [Try it live](https://url-shortener-cc59.onrender.com) · ASP.NET Core MVC (.NET 9) · EF Core 9 · SQL Server / SQLite · Docker
 
 Shortens links and shows how each one gets used: clicks over the last 14 days, top referrers and
@@ -143,7 +143,7 @@ projects above.
 
 **Full-Stack .NET Developer (Intern), Tuned Applications, Amman** · Nov 2025 to Apr 2026. I built
 a full ASP.NET Core MVC app from a written spec on EF Core and SQL Server, and added sign-in and
-role-based access with ASP.NET Core Identity. We worked in one-week iterations with code review
+role-based access with ASP.NET Core Identity. ShortLink was my training project there. We worked in one-week iterations with code review
 on everything.
 
 <p align="center">
