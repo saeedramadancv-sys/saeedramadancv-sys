@@ -1,7 +1,7 @@
 <h1 align="center">Saeed Ramadan</h1>
 
 <p align="center">
-  .NET backend developer · Amman, Jordan<br/>
+  .Net Developer · Amman, Jordan<br/>
   Computer Engineering, University of Jordan (graduated January 2026)
 </p>
 
@@ -15,7 +15,7 @@ I mostly write C# and ASP.NET Core, with SQL Server and EF Core underneath and A
 when a project needs a UI. Two of the backend projects below are live, so you can click around
 instead of taking my word for it.
 
-I'm looking for a junior backend or .NET role, or an internship, in Amman, and I can start right
+I'm looking for a .Net Developer role, or an internship, in Amman, and I can start right
 away. My degree is in Computer Engineering, so I also like the network side of things, and
 TechNova below is where that shows.
 
