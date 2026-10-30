@@ -12,14 +12,33 @@
 </p>
 
 I mostly write C# and ASP.NET Core, with SQL Server and EF Core underneath and Angular on top
-when a project needs a UI. Three of the projects below are live, so you can click around
+when a project needs a UI. Two of the backend projects below are live, so you can click around
 instead of taking my word for it.
 
-I'm looking for a junior .NET or backend role in Amman or the UAE, and I can start right away
-(I'm eligible for the UAE job-seeker visa). I'm also studying for the CCNA, so a junior network
-role interests me too.
+I'm looking for a junior backend or .NET role, or an internship, in Amman, and I can start right
+away. My degree is in Computer Engineering, so I also like the network side of things, and
+TechNova below is where that shows.
 
 ## Projects
+
+### [NetWatch](https://github.com/saeedramadancv-sys/netwatch): network and service monitoring · Jul 2026
+[Try it live](https://netwatch-rbmr.onrender.com) (press **Try the demo** for read-only access) · ASP.NET Core 9 · EF Core 9 · Identity + JWT · SignalR · Redis · Angular 19 · xUnit
+
+My biggest project. You add devices (routers, servers, websites), attach ping, TCP or HTTP
+checks, and watch status, response times and incidents update live. It works in English and
+Arabic.
+
+- Clean Architecture backend and an Angular 19 front end, with 147 automated tests (128 xUnit +
+  19 Karma) running in GitHub Actions.
+- Login uses ASP.NET Core Identity and JWT. Refresh tokens are hashed and single-use, and reusing
+  one revokes the whole chain.
+- Checks run in a `BackgroundService` on a `PeriodicTimer`, with a limit on how many run at once.
+  A device is only marked down after several failures in a row, so one lost packet doesn't open
+  an incident.
+- The dashboard summary is cached in Redis and cleared the moment a probe changes state, instead
+  of waiting for a timeout. A monitoring screen that says "all up" during an outage is worse than
+  no screen.
+- There's also a Bicep template for Azure. I haven't deployed it yet; the live demo runs on Render.
 
 ### [SlotLock](https://github.com/saeedramadancv-sys/slotlock): booking API · Sep 2026
 [![CI](https://github.com/saeedramadancv-sys/slotlock/actions/workflows/ci.yml/badge.svg)](https://github.com/saeedramadancv-sys/slotlock/actions/workflows/ci.yml) · ASP.NET Core 9 · EF Core 9 · SQL Server · xUnit · Serilog · Prometheus
@@ -44,25 +63,6 @@ doesn't.
 - The README writes up three bugs the tests caught. My favourite: `"24:00:00"` in appsettings
   means 24 days, not 24 hours.
 
-### [NetWatch](https://github.com/saeedramadancv-sys/netwatch): network and service monitoring · Jul 2026
-[Try it live](https://netwatch-rbmr.onrender.com) · ASP.NET Core 9 · EF Core 9 · Identity + JWT · SignalR · Redis · Angular 19 · xUnit
-
-My biggest project. You add devices (routers, servers, websites), attach ping, TCP or HTTP
-checks, and watch status, response times and incidents update live. It works in English and
-Arabic.
-
-- Clean Architecture backend and an Angular 19 front end, with 144 automated tests (125 xUnit +
-  19 Karma) running in GitHub Actions.
-- Login uses ASP.NET Core Identity and JWT. Refresh tokens are hashed and single-use, and reusing
-  one revokes the whole chain.
-- Checks run in a `BackgroundService` on a `PeriodicTimer`, with a limit on how many run at once.
-  A device is only marked down after several failures in a row, so one lost packet doesn't open
-  an incident.
-- The dashboard summary is cached in Redis and cleared the moment a probe changes state, instead
-  of waiting for a timeout. A monitoring screen that says "all up" during an outage is worse than
-  no screen.
-- There's also a Bicep template for Azure. I haven't deployed it yet; the live demo runs on Render.
-
 ### [ShortLink](https://github.com/saeedramadancv-sys/url-shortener): URL shortener with click stats · Jul 2026
 [Try it live](https://url-shortener-cc59.onrender.com) · ASP.NET Core MVC (.NET 9) · EF Core 9 · SQL Server / SQLite · Docker
 
@@ -75,6 +75,7 @@ the latest clicks.
   aliases are validated.
 - Short codes come from a cryptographic random generator over a 57-character alphabet with the
   look-alikes removed (`0/O`, `1/l/I`), and a unique index backs that up.
+- 11 integration tests on a real SQLite database, run by GitHub Actions.
 - Packaged with a multi-stage Dockerfile.
 
 ### [QuranVerse](https://github.com/saeedramadancv-sys/quranverse): recitation checker · graduation project · Sep 2025 – Jan 2026
@@ -90,7 +91,7 @@ or extra.
 - The text of Juz' Amma (37 surahs, 564 ayahs) ships with the app, so checking typed text works
   offline. Voice input uses the browser's speech recognition, which needs a connection.
 
-## The computer engineering side
+## Networking
 
 ### [TechNova network design](https://github.com/saeedramadancv-sys/technova-network-design) · Aug 2026
 Cisco IOS · OSPFv2 · VLSM · VLANs · NAT/PAT · ACLs
@@ -103,6 +104,8 @@ but I haven't built it in Packet Tracer yet.
   contiguous range.
 - Multi-area OSPFv2 with MD5 authentication and summarisation at the area border.
 - Each of the 60 test cases names the command to run and the exact output to expect.
+
+## Hardware
 
 ### [verilog-digital-design](https://github.com/saeedramadancv-sys/verilog-digital-design) · Sep 2026
 Verilog · VHDL · Icarus Verilog · GHDL · CI
@@ -118,62 +121,17 @@ state machine that detects the pattern 1011.
 
 ## Tech
 
-**Backend**
+**Backend:** C#, .NET 9, ASP.NET Core (MVC and Web API), EF Core, REST, SignalR, JWT, xUnit
 
-![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET_9-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core_MVC-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![EF Core](https://img.shields.io/badge/Entity_Framework_Core-512BD4?style=flat-square)
-![REST](https://img.shields.io/badge/REST_APIs-005571?style=flat-square)
-![SignalR](https://img.shields.io/badge/SignalR-512BD4?style=flat-square)
-![JWT](https://img.shields.io/badge/JWT_Auth-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
-![xUnit](https://img.shields.io/badge/xUnit-512BD4?style=flat-square)
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+**Data:** SQL Server, T-SQL, SQLite, Redis
 
-**Data**
+**Networking:** Cisco IOS, OSPFv2, VLSM, VLANs and 802.1Q, NAT/PAT, ACLs, Packet Tracer
 
-![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
-![T-SQL](https://img.shields.io/badge/T--SQL-CC2927?style=flat-square)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+**DevOps and tools:** Docker, GitHub Actions, Serilog, Prometheus, Git, Visual Studio
 
-**Networking**
+**Front end:** Angular 19, TypeScript, JavaScript, Bootstrap 5, HTML, CSS
 
-![Cisco IOS](https://img.shields.io/badge/Cisco_IOS-1BA0D7?style=flat-square&logo=cisco&logoColor=white)
-![OSPF](https://img.shields.io/badge/OSPFv2-1BA0D7?style=flat-square)
-![VLSM](https://img.shields.io/badge/VLSM_%2F_Subnetting-1BA0D7?style=flat-square)
-![VLAN](https://img.shields.io/badge/VLANs_%2F_802.1Q-1BA0D7?style=flat-square)
-![NAT](https://img.shields.io/badge/NAT_%2F_PAT-1BA0D7?style=flat-square)
-![Packet Tracer](https://img.shields.io/badge/Packet_Tracer-1BA0D7?style=flat-square&logo=cisco&logoColor=white)
-
-**Hardware description**
-
-![Verilog](https://img.shields.io/badge/Verilog-1A1A1A?style=flat-square)
-![VHDL](https://img.shields.io/badge/VHDL-4B0082?style=flat-square)
-![Quartus](https://img.shields.io/badge/Intel_Quartus-0071C5?style=flat-square&logo=intel&logoColor=white)
-![ModelSim](https://img.shields.io/badge/ModelSim-005386?style=flat-square)
-![GHDL](https://img.shields.io/badge/GHDL-2C3E50?style=flat-square)
-![LTspice](https://img.shields.io/badge/LTspice-CC0000?style=flat-square)
-
-**DevOps &amp; Tools**
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Bicep](https://img.shields.io/badge/Bicep-0078D4?style=flat-square)
-![Serilog](https://img.shields.io/badge/Serilog-1F425F?style=flat-square)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![Visual Studio](https://img.shields.io/badge/Visual_Studio-5C2D91?style=flat-square&logo=visualstudio&logoColor=white)
-
-**Front-end**
-
-![Angular](https://img.shields.io/badge/Angular_19-DD0031?style=flat-square&logo=angular&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Bootstrap](https://img.shields.io/badge/Bootstrap_5-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-
-_Also studied: Java, Python, C++, C · Computer Networks · Operating Systems · Computer Architecture_
+**Hardware:** Verilog, VHDL, Icarus Verilog, GHDL
 
 ## Background
 
